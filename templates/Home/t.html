@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/t.css' %}">
+    </head>
+    <body>
+        <h1>{{tec}}</h1>
+        {% if tec %}
+        <Table>
+            <tr>
+                <th>ID</th>
+                <th>T_name</th>
+                <th>T_Age</th>
+                <th>T_Class</th>
+            </tr>
+            {% for th in tec %}
+            <tr>
+                <td>{{th.id}}</td>
+                <td>{{th.T_name}}</td>
+                <td>{{th.T_Age}}</td>
+                <td>{{th.T_Class}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h1>Empty Table</h1>
+        {% endif %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
